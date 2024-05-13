@@ -66,7 +66,7 @@ export function createWebSocket(callback) {
 
     // Only create a new WebSocket connection if there's no existing connection
     if (!ws || ws.readyState === WebSocket.CLOSED || ws.readyState === WebSocket.CLOSING) {
-        console.log("This is the serverUrl from client:", serverUrl)
+        //console.log("This is the serverUrl from client:", serverUrl)
         ws = new WebSocket(serverUrl);
 
         ws.onopen = function () {
@@ -74,7 +74,9 @@ export function createWebSocket(callback) {
 
             // Run setInterval to send a message to the server every 5 seconds
             setInterval(() => {
-                ws.send('Ping...');
+                if (ws.readyState === WebSocket.OPEN) {
+                    ws.send('Ping...');
+                }
             }, 60000);
         };
 
@@ -116,7 +118,7 @@ function reconnectWebSocket() {
 }
 
 function getWebSocketUrl() {
-    console.log(process.env.REACT_APP_NODE_ENV)
+    //console.log(process.env.REACT_APP_NODE_ENV)
     switch (process.env.REACT_APP_NODE_ENV) {
         case 'production':
             console.log(`wss://${process.env.REACT_APP_WEBSOCKET_SERVER_PORT}`)
