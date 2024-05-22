@@ -14,7 +14,7 @@ function AgentDashboard() {
                 console.log(res);
                 if (res.data.role === 'agent' || res.status === 403) {
                     console.log("agent")
-                    setName(res.data.username);
+                    setName(res.data.name);
                 } else {
                     console.error("Unexpected response status:", res.status);
                 }
