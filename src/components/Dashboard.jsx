@@ -107,6 +107,7 @@ function Dashboard() {
     }
 
     if (redirectToAgentDashboard) {
+        closeWebSocket();
         return <Navigate to="/agentdashboard" />;
     }
 
