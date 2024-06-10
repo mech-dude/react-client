@@ -1,11 +1,13 @@
 import { StrictMode , React } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import LoginPage from './components/LoginPage.jsx';
-import AdminPage from './components/AdminPage.jsx';
-import LeagueOfHeroesPage from './components/LeagueOfHeroesPage.jsx';
-import NotFoundPage from './components/NotFoundPage.jsx';
-import Dashboard from './components/Dashboard.jsx';
-import AgentDashboard from './components/AgentDashboard.jsx'
+
+// Pages
+import LoginPage from './pages/LoginPage.jsx';
+import AdminPage from './pages/AdminPage.jsx';
+import LeagueOfHeroesPage from './pages/LeagueOfHeroesPage.jsx';
+import NotFoundPage from './pages/NotFoundPage.jsx';
+import Dashboard from './pages/Dashboard.jsx';
+import AgentDashboard from './pages/AgentDashboard.jsx'
 
 function App() {
   return (
